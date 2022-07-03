@@ -1,16 +1,6 @@
 class Board {
-    constructor(cardList) {
-        let edgeLength = Math.floor(Math.sqrt(cardList.length))
-
-        this.board = []
-        
-        for (let i = 0; i < edgeLength; i++) {
-            let row = []
-            for (let j = 0; j < edgeLength; j++) {
-                row.push(cardList[i * edgeLength + j])
-            }
-            this.board.push(row)
-        }
+    constructor(cardList, boardBuilder) {
+        this.board = boardBuilder.build(cardList)
     }
 
     swap(source, destination) {
