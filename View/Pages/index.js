@@ -1,11 +1,7 @@
 function main() {
-    let gen = new Generator(8)
-    let board = new Board(gen.generate(), new GameBoardBuilder())
+    let bootstrapper = new Bootstrapper()
 
-    board.board.forEach((row) =>
-    {
-        console.log(...row)
-    })
+    bootstrapper.init()
 }
 
 main()
