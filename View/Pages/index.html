@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title>Get Schwifty</title>
+    
+    <script src="../../Model/Board.js"></script>
+    <script src="../../Model/Card.js"></script>
+    <script src="../../Model/EmptyCard.js"></script>
+    <script src="../../Model/BoardBuidlerBase.js"></script>
+    <script src="../../Model/GameBoardBuilder.js"></script>
+    <script src="../../Controller/ViewControl.js"></script>
+    <script src="../../Controller/GeneratorBase.js"></script>
+    <script src="../../Controller/Generator.js"></script>
+    <script src="../../Controller/Game.js"></script>
+    <script src="../../View/Displayer.js"></script>
+    <script src="../../View/BoardDisplayer.js"></script>
+    <script src="../../View/WinningDisplayer.js"></script>
+    <script src="../../Bootstrap/Bootstrapper.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+    <div id="hasWon" class="overlay-screen">
+        <p class="overlay-screen-text">You Won!!!</p>
+    </div>
+    <div class="container">
+        <p class="title">Get Schwifty</h1>
+        <p class="subtitle">Best Game Ever.</h1>
+        <div class="grid-container">
+            <div id="board" class="grid"></div>
+            <button id="replayButton" class="ui-button">Replay!</button>
+        </div>
+        
+    </div>
+
+    <script src="index.js"></script>
+</body>
