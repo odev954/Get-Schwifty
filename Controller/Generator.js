@@ -1,7 +1,6 @@
 class Generator extends GeneratorBase {
     constructor(cardsAmount) {
         super(cardsAmount)
-
     }
 
     shuffle(sequance) {
