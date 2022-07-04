@@ -13,31 +13,20 @@
     <script src="../../Controller/Game.js"></script>
     <script src="../../View/Displayer.js"></script>
     <script src="../../View/BoardDisplayer.js"></script>
+    <script src="../../View/WinningDisplayer.js"></script>
     <script src="../../Bootstrap/Bootstrapper.js"></script>
     
-
     <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
+    <div id="hasWon" class="overlay-screen">
+        <p class="overlay-screen-text">You Won!!!</p>
+    </div>
     <div class="container">
         <p class="title">Get Schwifty</h1>
         <p class="subtitle">Best Game Ever.</h1>
         <div class="grid-container">
-            <div id="board" class="grid">
-                <div class="card">
-                    <button class="card-button">
-                        1
-                    </button>
-                </div>
-                <div class="card">2</div>
-                <div class="card">3</div>
-                <div class="card">4</div>
-                <div class="card">5</div>
-                <div class="card">6</div>
-                <div class="card">7</div>
-                <div class="card">8</div>
-                <div class="card">9</div>
-            </div>
+            <div id="board" class="grid"></div>
         </div>
     </div>
 
