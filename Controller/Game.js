@@ -5,7 +5,7 @@ class Game {
         {
             for(let column = 0; column < board.board[row].length; column++)
             {
-                if(typeof(board.board[row][column].value) == "EmptyCard")
+                if(typeof(board.board[row][column]) == "EmptyCard")
                 {
                     this.emptyCardIndex = { row: row, column: column }
                 }
@@ -26,10 +26,43 @@ class Game {
     }
 
     isValidMove(destination) {
-        return true
+        
+        if(this.emptyCardIndex.row == destination.row)
+        {
+            return this.emptyCardIndex.column + 1 == destination.column || 
+                   this.emptyCardIndex.column - 1 == destination.column
+        }
+        else if(this.emptyCardIndex.column == destination.column)
+        {
+            return this.emptyCardIndex.row + 1 == destination.row || 
+                   this.emptyCardIndex.row - 1 == destination.row
+        }
+        return false
     }
 
     isWon() {
-        return false
+        let won = true
+        let lastCard = null
+        let sequance = []
+        
+        this.board.board.forEach((row) => {
+            sequance = sequance.concat(row)
+        })
+
+        sequance.every((card) => {
+            if(card.value != NaN) 
+            {
+                if(lastCard != null)
+                {
+                    won = (lastCard.value + 1 == card.value)
+                }
+                lastCard = card
+            }
+            
+            return won
+        })
+
+        won = won && (typeof(lastCard) == "EmptyCard")
+        return won
     }
 }
