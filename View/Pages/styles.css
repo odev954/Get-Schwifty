@@ -33,12 +33,30 @@ body {
 .card {
     display: flex;
     background-color: blueviolet;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center
+}
+
+.card-button {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 32px;
     border-radius: 20px;
-    align-items: center;
-    justify-content: center
+    border-color: transparent;
+}
+
+.card-button:hover {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(155, 79, 227);
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 32px;
+    border-radius: 20px;
 }
 
 .title {
