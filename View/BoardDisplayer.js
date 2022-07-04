@@ -17,7 +17,7 @@ class BoardDisplayer extends Displayer {
                 cardContainer.classList.add("card")
                 
                 cardButton.classList.add("card-button")
-                cardButton.textContent = card.value.toString()
+                cardButton.textContent = !isNaN(card.value) ? card.value.toString() : ""
                 cardButton.setAttribute("index", JSON.stringify(index))
                 cardButton.onclick = () => {
                     viewController.onCardClick(JSON.parse(cardButton.getAttribute("index")))
