@@ -52,19 +52,15 @@ class Game {
         })
 
         sequance.every((card) => {
-            if(card.value != NaN) 
+            if(!isNaN(card.value) && lastCard != null)
             {
-                if(lastCard != null)
-                {
-                    won = (lastCard.value + 1 == card.value)
-                }
-                lastCard = card
+                won = (lastCard.value + 1 == card.value)
             }
+            lastCard = card
             
             return won
         })
 
-        won = won && (typeof(lastCard) == "EmptyCard")
-        return won
+        return won && (lastCard instanceof EmptyCard)
     }
 }

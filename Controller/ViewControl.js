@@ -17,6 +17,11 @@ class ViewControl {
 
         if(!hadError)
         {
+            if(this.game.isWon())
+            {
+                let wonDisplayer = new WinningDisplayer()
+                wonDisplayer.display()
+            }
             let boardDisplay = new BoardDisplayer(this.game.board.board)
             boardDisplay.display(this)
         }
