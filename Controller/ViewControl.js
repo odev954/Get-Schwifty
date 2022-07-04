@@ -17,8 +17,8 @@ class ViewControl {
 
         if(!hadError)
         {
-            let boardDisplay = new BoardDisplayer(this.game.board)
-            boardDisplay.display(onCardClick)
+            let boardDisplay = new BoardDisplayer(this.game.board.board)
+            boardDisplay.display(this)
         }
     }
 }

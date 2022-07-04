@@ -3,11 +3,11 @@ class BoardDisplayer extends Displayer {
         super(board)
     }
 
-    display(onClickEventHandler) {
-        const BOARD = document.getElementById("board")
+    display(viewController) {
+        let boardElement = document.getElementById("board")
         
-        BOARD.innerHTML = ''
-        index = {row: 0, column: 0}
+        boardElement.innerHTML = ''
+        let index = {row: 0, column: 0}
 
         this.object.forEach((row) => {
             row.forEach((card) => {
@@ -20,11 +20,11 @@ class BoardDisplayer extends Displayer {
                 cardButton.textContent = card.value.toString()
                 cardButton.setAttribute("index", JSON.stringify(index))
                 cardButton.onclick = () => {
-                    onClickEventHandler(JSON.parse(cardButton.getAttribute("index")))
+                    viewController.onCardClick(JSON.parse(cardButton.getAttribute("index")))
                 }
                 
                 cardContainer.appendChild(cardButton)
-                BOARD.appendChild(cardContainer)
+                boardElement.appendChild(cardContainer)
 
                 index.column++
             })

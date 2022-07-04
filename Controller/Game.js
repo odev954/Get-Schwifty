@@ -1,23 +1,25 @@
 class Game {
     constructor(board) {
-        
-        for(let row = 0; row < board.board.length; row++)
+        this.board = board
+
+        for(let row = 0; row < this.board.board.length; row++)
         {
-            for(let column = 0; column < board.board[row].length; column++)
+            for(let column = 0; column < this.board.board[row].length; column++)
             {
-                if(typeof(board.board[row][column]) == "EmptyCard")
+                if(board.board[row][column] instanceof EmptyCard)
                 {
                     this.emptyCardIndex = { row: row, column: column }
+                    break
                 }
             }
         }
-        this.board = board
     }
 
     doMove(destination) {
         if(this.isValidMove(destination))
         {
             this.board.swap(this.emptyCardIndex, destination)
+            this.emptyCardIndex = destination
         }
         else
         {
