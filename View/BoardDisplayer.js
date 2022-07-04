@@ -10,7 +10,6 @@ class BoardDisplayer extends Displayer {
         index = {row: 0, column: 0}
 
         this.object.forEach((row) => {
-            
             row.forEach((card) => {
                 let cardContainer = document.createElement("div")
                 let cardButton = document.createElement("button")
