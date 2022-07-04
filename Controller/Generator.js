@@ -10,10 +10,14 @@ class Generator extends GeneratorBase {
 
     isSequanceValid(sequance) {
         let score = 0
-        for(let checkedCard in sequance) {
-            for(let card in sequance) {
-                if(checkedCard !== card) {
-                    if(card.value != NaN && card.value < checkedCard.value)
+
+        for(let i = 0; i < sequance.length; i++) 
+        {
+            if(sequance[i].value != NaN) 
+            {
+                for(let j = i; j < sequance.length; j++) 
+                {
+                    if(sequance[j].value != NaN && sequance[j].value < sequance[i].value)
                     {
                         score++
                     }
@@ -25,28 +29,27 @@ class Generator extends GeneratorBase {
         {
             let counter = 0;
             const SIZE = Math.floor(Math.sqrt(sequance.length))
-            for(let card in sequance) 
-            {
+            
+            sequance.forEach((card) => {
                 if(card.value == NaN) 
                 {
                     score += Math.floor(counter / SIZE)
-                    break
                 }
                 counter++
-            }
+            })
         }
 
         return score % 2 == 0
     }
 
     generate() {
-        sequance = this.cards
+        let sequance = this.cards
         
         do
         {
-            sequance = shuffle(sequance)
+            sequance = this.shuffle(sequance)
 
-        } while(!this.isSequanceValid())
+        } while(!this.isSequanceValid(sequance))
 
         return sequance
     }
