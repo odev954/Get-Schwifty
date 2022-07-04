@@ -1,12 +1,16 @@
 class Game {
     constructor(board) {
-        this.board = board
+        this.setupGame(board)
+    }
+
+    setupGame(newBoard) {
+        this.board = newBoard
 
         for(let row = 0; row < this.board.board.length; row++)
         {
             for(let column = 0; column < this.board.board[row].length; column++)
             {
-                if(board.board[row][column] instanceof EmptyCard)
+                if(this.board.board[row][column] instanceof EmptyCard)
                 {
                     this.emptyCardIndex = { row: row, column: column }
                     break

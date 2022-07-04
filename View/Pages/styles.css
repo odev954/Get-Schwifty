@@ -3,6 +3,7 @@ html {
 }
 body {
     height: 100%;
+    margin: auto;
 }
 
 .container {
@@ -17,8 +18,8 @@ body {
 }
 
 .grid-container {
-    height: 60%;
-    width: 60%;
+    height: 50%;
+    width: 50%;
 }
 
 .grid {
@@ -49,6 +50,28 @@ body {
     border-color: transparent;
 }
 
+.ui-button {
+    height: 15%;
+    width: 98%;
+    background-color: blueviolet;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 32px;
+    border-radius: 20px;
+    border-color: transparent;
+}
+
+.ui-button:hover {
+    height: 15%;
+    width: 98%;
+    background-color: rgb(155, 79, 227);
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 32px;
+    border-radius: 20px;
+    border-color: transparent;
+}
+
 .card-button:hover {
     height: 100%;
     width: 100%;
@@ -64,6 +87,7 @@ body {
     font-size: 64px;
     color: black;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 .subtitle {
