@@ -1,0 +1,55 @@
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+
+.grid-container {
+    height: 60%;
+    width: 60%;
+}
+
+.grid {
+    height: 100%;
+    display: grid;
+    grid-gap: 10px;
+    margin: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.card {
+    display: flex;
+    background-color: blueviolet;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 32px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center
+}
+
+.title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 64px;
+    color: black;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 36px;
+    color: gray;
+}
