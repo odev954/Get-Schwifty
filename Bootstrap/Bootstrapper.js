@@ -7,7 +7,16 @@ class Bootstrapper {
     }
 
     init() {
+        let replayButton = document.getElementById('replayButton')
         let boardDisplay = new BoardDisplayer(this.game.board.board)
         boardDisplay.display(this.viewController)
+
+        replayButton.addEventListener('click', () => {
+            this.board = new Board(this.generator.generate(), new GameBoardBuilder())
+            this.game.setupGame(this.board)
+
+            let boardDisplay = new BoardDisplayer(this.game.board.board)
+            boardDisplay.display(this.viewController)
+        })
     }
 }
